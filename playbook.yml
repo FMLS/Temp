@@ -1,0 +1,19 @@
+---
+- name: My task
+  hosts: localhost
+  connection: local
+  vars:
+    msg: "hello world"
+
+  tasks:
+    - name: "Aliyun init"
+      ansible.builtin.command:
+        cmd: "echo {{ msg }}"
+      register: output
+      changed_when: output.rc == 0
+
+    - name: "Check"
+      ansible.builtin.debug:
+        msg: "{{ output }}"
+
+
