@@ -6,7 +6,7 @@
     msg: "hello world"
 
   tasks:
-    - name: "Aliyun init"
+    - name: "hello world"
       ansible.builtin.command:
         cmd: "echo {{ msg }}"
       register: output
